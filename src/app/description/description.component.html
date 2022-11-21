@@ -5,31 +5,15 @@
                 <div class="jl-fl-frm">
                     <div class="jl-lt-fm-img-m-g">
                         <div class="jl-lt-frm-img">
-                            <h1 class="jl-pg-title">Transport</h1>
+                            <h1 class="jl-pg-title">{{productData.name}}</h1>
                             <div>
-                                <img src="assets/images/banner.jpg" class="img-fluid">
+                                <img src="{{productData.path}}{{productData.image}}" class="img-fluid">
                             </div>
                             <!-- banner image end here -->
                             <div class="jl-lt-content">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. It has survived not only five centuries, but also
-                                            the leap into electronic typesetting, remaining essentially unchanged. It
-                                            was popularised in the 1960s with the release of Letraset sheets containing
-                                            Lorem Ipsum passages, and more recently with desktop publishing software
-                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. It has survived not only five centuries, but also
-                                            the leap into electronic typesetting, remaining essentially unchanged. It
-                                            was popularised in the 1960s with the release of Letraset sheets containing
-                                            Lorem Ipsum passages, and more recently with desktop publishing software
-                                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p [innerHtml]="productData.description"></p>
                                     </div>
                                 </div>
                                 <!-- row end  here -->
@@ -40,9 +24,9 @@
                             <div class="jl-nmu">
                                 <div class="title">Ga direct naar:</div>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                             Aanmelden </a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                             Documenten</a></li>
                                 </ul>
                             </div>

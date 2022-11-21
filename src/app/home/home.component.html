@@ -4,12 +4,9 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="jl-fl-frm jl-hm-intro">
-            <h1 class="jl-pg-title">Onderneem als freelancer bij Jezsel.NL</h1>
-            <p>Ben jij bekend met de logistiek- en/of transportsector en bereid om jouw expertise in te zetten bij
+            <h1 class="jl-pg-title">{{about.title}}</h1>
+            <p [innerHtml]="about.content">Ben jij bekend met de logistiek- en/of transportsector en bereid om jouw expertise in te zetten bij
               Jezsel.nl? Meld je dan aan! </p>
-            <p>Bij Jezsel.NL kun je je eigen tarieven bepalen en geef je zelf je beschikbaarheid op. Daarnaast verbreed
-              je als freelancer je netwerk via Jezsel.NL. Freelancers en klanten van Jezsel.NL worden bijeen gebracht.
-            </p>
           </div>
         </div>
       </div>
@@ -22,75 +19,20 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="jl-hm-categories-g">
-            <div class="jl-cat-tl-bx">
+          <div class="jl-hm-categories-g" id="content-desc">
+            <div class="jl-cat-tl-bx" *ngFor="let product of productLists">
               <div class="jl-cat-image">
-                <img src="assets/images/categorie-image.jpg" class="img-fluid">
+                <img src="{{product.path}}{{product.thumbnail}}" class="img-fluid">
               </div>
               <!-- image end here -->
               <div class="jl-cat-content">
-                <div class="title">​Logistiek</div>
+                <div class="title">{{product.name}}</div>
                 <div class="content">
+                  <div [innerHtml]="product.shortdescription">
 
-                  <ul>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Alle activiteiten in de logistiek A
-                      tot Z</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Flexibel en vrijheid</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Mogelijkheid tot deeltijd </li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Binnen jou woonomgeving</li>
-
-                  </ul>
-
+                  </div>
                 </div>
-                <a href="#">Meer over Pakketten <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-              </div>
-              <!-- content end here -->
-            </div>
-            <!-- categories bx end here -->
-            <div class="jl-cat-tl-bx">
-              <div class="jl-cat-image">
-                <img src="assets/images/categorie-image.jpg" class="img-fluid">
-              </div>
-              <!-- image end here -->
-              <div class="jl-cat-content">
-                <div class="title">​Koerier</div>
-                <div class="content">
-                  <ul>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Vervoersactiviteiten door heel
-                      Nederland en/of Buitenland</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Flexibel en vrijheid</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Gebruiken van Jezsel voertuigen</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Geen Niwo vergunning nodig</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Max 500 kg laadvermogen</li>
-
-                  </ul>
-
-                </div>
-                <a href="#">Meer over Pakketten <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-              </div>
-              <!-- content end here -->
-            </div>
-            <!-- categories bx end here -->
-            <div class="jl-cat-tl-bx">
-              <div class="jl-cat-image">
-                <img src="assets/images/categorie-image.jpg" class="img-fluid">
-              </div>
-              <!-- image end here -->
-              <div class="jl-cat-content">
-                <div class="title">Groot transport</div>
-                <div class="content">
-                  <ul>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Vervoersactiviteiten door heel
-                      Nederland en/of Buitenland</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Flexibel en vrijheid</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Gebruiken van Jezsel voertuigen</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>NIWO vergunning</li>
-                    <li><i class="fa fa-angle-double-right" aria-hidden="true"></i>Paychecked certificering (personeels
-                      in loondienst)</li>
-
-                  </ul>
-                </div>
-                <a href="#">Meer over Pakketten <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                <a href="javascript:void(0);" routerLink="/details/{{product.id}}">Meer over Pakketten <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
               </div>
               <!-- content end here -->
             </div>
