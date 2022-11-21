@@ -1,0 +1,142 @@
+@charset "UTF-8";
+:root {
+	--black: #000;
+	--labelclr:#333333;
+}
+
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+
+body {
+margin: 0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+p{ color:#333333; font-size:14px;}
+
+.jl-hm-categories-g {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap: 30px;
+}
+.jl-cat-tl-bx {
+	background-color: #fff;
+	border-radius: 12px;
+	padding-bottom: 20px;
+}
+.jl-cat-image img{ border-radius: 12px 12px 0 0;}
+.jl-cat-content{
+	padding:10px 20px 0px 20px;
+
+}
+.jl-cat-content .title{
+font-size: 20px;
+color: #000;
+margin-bottom: 5px;}
+.jl-cat-content .content{ font-size:12px; text-align:justify; margin-bottom:10px;}
+.jl-cat-content .content ul { margin:0; padding:0; list-style-type:none; text-align: left; padding-bottom: 10px;}
+.jl-cat-content .content ul li i{ font-size:14px; color:#e21013; margin-right:8px;}
+.jl-cat-content a {
+	color: #fff;
+	font-size: 14px;
+	background-color: #e21013;
+	border-radius: 5px;
+	padding: 10px;
+}
+.jl-head-bx {
+	padding-top: 15px;
+	border-bottom: 5px solid #e21013;
+	padding-bottom: 15px;
+}
+.jl-hm-categories-section{ background-color:#e21013; padding:50px 0px;}
+.jl-fl-frm {
+	color: #999;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	background: #fff;
+	margin-top: 20px;
+	width: 100%;
+	padding-top: 20px;
+}
+
+.jl-lt-fm-img-m-g {
+	display: grid;
+	grid-template-columns: 2.6fr 1fr;
+	grid-gap:20px;
+}
+
+.jl-lt-fm-img-m-g.frm-sfr{
+
+grid-template-columns:1fr;
+}
+.jl-lt-fm-img-m-g img{ border-radius:10px;}
+
+
+.jl-lt-form {
+	border-radius: 10px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.jl-lt-content {
+	width: 100%;
+	margin-top: 10px;
+}
+.form-group.required > label::after {
+	color: red;
+	content: "*";
+	position: absolute;
+	margin-left: 5px;
+	font-size: 20px;
+	margin-top: -5px;
+}
+.jl-fl-frm.jl-hm-intro p{ font-size:16px }
+
+.form-group {
+	margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	align-items: center;
+	grid-gap:10px;
+}
+
+.form-group.freelancerlbl {
+
+	grid-template-columns:1fr;
+	grid-gap:0px;
+}
+
+.jl-beschid-g {
+	display: grid;
+	grid-template-columns: 10px 80px 200px;
+	grid-gap: 20px;
+	align-items: center;
+	width: 100%;
+	color: var(--labelclr);
+	font-size:14px;
+	margin-bottom:10px;
+	
+}
+.jl-pg-title { font-size:30px; color:#e21013; margin-bottom:15px;}
+.jl-nmu{ padding:20px; background-color:#e21013; padding:20px 30px; border-radius:10px; margin-top:50px;}
+.jl-nmu .title{ font-size:24px; color:#FFFFFF; font-weight:bold; padding-bottom:10px;}
+.jl-nmu ul{ margin:0; padding:0; list-style-type:none;}
+.jl-nmu ul li{ padding-bottom:5px;}
+.jl-nmu ul li a{ color:#FFFFFF; text-decoration:none;}
+
+.jl-lt-form h2{ font-size:22px; font-weight:bold; color:var(--black)}
+.jl-lt-form h3{ font-size:16px; color:var(--black); font-weight:bold}
+.jl-lt-form .form-group label{ font-size:12px; color:var(--labelclr)}
+.jl-lt-form .form-group input, .jl-lt-form .form-group select{ font-size:12px;}
+a.jl-addbtn{ color:#ff0000; display:inline-block; margin-top:20px;}
+button.submit-btn{ background-color:#ff0000; color:#FFFFFF}
+button.submit-btn:hover{ background-color:#000; color:#FFFFFF}
