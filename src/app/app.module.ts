@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     ToastrModule.forRoot()
   ],
   providers: [],

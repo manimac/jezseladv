@@ -24,7 +24,7 @@
                             <div class="jl-nmu">
                                 <div class="title">Ga direct naar:</div>
                                 <ul>
-                                    <li><a href="javascript:void(0);"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                    <li><a href="javascript:void(0);" routerLink="/register/{{productData.id}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                             Aanmelden </a></li>
                                     <li><a href="javascript:void(0);"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                             Documenten</a></li>
@@ -42,3 +42,9 @@
     </div>
     <!-- container end here -->
 </div>
+<div id="load_cover" *ngIf="showLoader">
+    <div class="loaderInner">
+      <div class="loader"></div>
+      <div class="loader-logo"></div>
+    </div>
+  </div>

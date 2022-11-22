@@ -11,6 +11,7 @@ export class DescriptionComponent implements OnInit {
 
   productData: any = {};
   about: any = {};
+  showLoader: boolean = false;
   constructor(private http: HttpRequestService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -27,9 +28,11 @@ export class DescriptionComponent implements OnInit {
   }
 
   getProducts(productId: any) {
+    this.showLoader = true;
     this.http.get('product/find/' + productId).subscribe(
       (response: any) => {
         this.productData = response;
+        this.showLoader = false;
         
       }, (error: any) => {
         this.http.exceptionHandling(error);

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // baseurl: 'http://localhost:8083/jezsel/'
-  baseurl: 'https://demo.jezsel.nl/jezseladv/'
+  baseurl: 'http://localhost:8083/jezseladv/'
+  // baseurl: 'https://demo.jezsel.nl/jezseladv/'
 };
 
 /*

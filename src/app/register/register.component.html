@@ -7,206 +7,217 @@
                         <div class="jl-lt-frm-img">
                             <div> <img src="assets/images/banner.jpg" class="img-fluid"></div>
                             <!-- banner image end here -->
-                            <div class="jl-lt-form">
-                                <div class="row mb-3">
-                                    <div class="col-lg-4">
-                                        <div class="form-group required freelancerlbl">
-                                            <label>Aanmelden als freelancer bij Jezsel.nl</label>
-                                            <select class="form-control">
-                                                <option></option>
-                                                <option value="Logistiek">Logistiek</option>
-                                                <option value="Koerier">Koerier</option>
-                                                <option value="Groot transport">Groot transport </option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- row end  here -->
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <h3>Contact gegevens</h3>
-                                        <div class="form-group required ">
-                                            <label>Naam</label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Adres</label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Postcode</label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Plaats </label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Land </label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Telefoon </label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="form-group required ">
-                                            <label>E-mail</label>
-                                            <input class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h3>Bedrijfsgegevens</h3>
-                                        <div class="form-group required ">
-                                            <label>Handelsnaam </label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Adres</label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Postcode</label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Plaats </label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Land </label>
-                                            <input class="form-control">
-                                        </div>
-
-                                        <div class="form-group required ">
-                                            <label>Rechtsvorm </label>
-                                            <select class="form-control">
-                                                <option value="">-- Kies een rechtsvorm --</option>
-                                                <option>Besloten Vennootschap</option>
-                                                <option>Eenmanszaak</option>
-                                                <option>Stichting</option>
-                                                <option>Vereniging</option>
-                                                <option>Vennootschap Onder Firma</option>
-                                                <option>Rechtspersoon in oprichting</option>
-                                                <option>Commanditaire Vennootschap</option>
-                                                <option>Vereniging van Eigenaars</option>
-                                                <option>Geen rechtsvorm (overheid etc.)</option>
-                                                <option>Naamloze Vennootschap</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="form-group required ">
-                                            <label>KvK nummer</label>
-                                            <div>
-                                                <input class="form-control">
-                                                <span style="font-size:12px; color: var(--labelclr);">Upload
-                                                    file</span><input type="file" id="myFile" name="filename"
-                                                    style="margin-top:10px; margin-left:5px">
-                                            </div>
-                                        </div>
-                                        <div class="form-group required ">
-                                            <label>NIWO vergunning</label>
-                                            <div>
-                                                <select class="form-control">
-                                                    <option value=""></option>
-                                                    <option>Ja</option>
-                                                    <option>Nee</option>
+                            <form [formGroup]="formGroup" (ngSubmit)="save()">
+                                <div class="jl-lt-form">
+                                    <div class="row mb-3">
+                                        <div class="col-lg-4">
+                                            <div class="form-group required freelancerlbl">
+                                                <label>Aanmelden als freelancer bij Jezsel.nl</label>
+                                                <select class="form-control" formControlName="product_id" (change)="selectProduct()">
+                                                    <option value="">Select</option>
+                                                    <option value="{{product.id}}" *ngFor="let product of productLists">{{product.name}}</option>
                                                 </select>
-                                                <span style="font-size:12px; color: var(--labelclr);">Upload
-                                                    file</span><input type="file" id="myFile" name="filename"
-                                                    style="margin-top:10px; margin-left:5px">
                                             </div>
                                         </div>
-                                        <div class="form-group required ">
-                                            <label>BTW nummer</label>
-                                            <input class="form-control">
-
+    
+                                    </div>
+                                    <!-- row end  here -->
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h3>Contact gegevens</h3>
+                                            <div class="form-group required ">
+                                                <label>Naam</label>
+                                                <input class="form-control" formControlName="Naam">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Adres</label>
+                                                <input class="form-control" formControlName="Adres">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Postcode</label>
+                                                <input class="form-control" formControlName="Postcode">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Plaats </label>
+                                                <input class="form-control" formControlName="Plaats">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Land </label>
+                                                <input class="form-control" formControlName="Land">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Telefoon </label>
+                                                <input class="form-control" formControlName="Telefoon">
+                                            </div>
+                                            <div class="form-group required ">
+                                                <label>E-mail</label>
+                                                <input class="form-control" formControlName="Email">
+                                            </div>
                                         </div>
-                                        <div class="form-group required ">
-                                            <label>Bankrekening</label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="form-group required ">
-                                            <label>Heeft u personeel in loondienst?</label>
-                                            <select class="form-control">
-                                                <option value=""></option>
-                                                <option>Ja</option>
-                                                <option>Nee</option>
-                                            </select>
+                                        <div class="col-lg-6">
+                                            <h3>Bedrijfsgegevens</h3>
+                                            <div class="form-group required ">
+                                                <label>Handelsnaam </label>
+                                                <input class="form-control" formControlName="Handelsnaam">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Adres</label>
+                                                <input class="form-control" formControlName="BedrijfsgegevensAdres">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Postcode</label>
+                                                <input class="form-control" formControlName="BedrijfsgegevensPostcode">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Plaats </label>
+                                                <input class="form-control" formControlName="BedrijfsgegevensPlaats">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Land </label>
+                                                <input class="form-control" formControlName="BedrijfsgegevensLand">
+                                            </div>
+    
+                                            <div class="form-group required ">
+                                                <label>Rechtsvorm </label>
+                                                <select class="form-control" formControlName="Rechtsvorm">
+                                                    <option value="">-- Kies een rechtsvorm --</option>
+                                                    <option value="Besloten Vennootschap">Besloten Vennootschap</option>
+                                                    <option value="Eenmanszaak">Eenmanszaak</option>
+                                                    <option value="Stichting">Stichting</option>
+                                                    <option value="Vereniging">Vereniging</option>
+                                                    <option value="Vennootschap Onder Firma">Vennootschap Onder Firma</option>
+                                                    <option value="Rechtspersoon in oprichting">Rechtspersoon in oprichting</option>
+                                                    <option value="Commanditaire Vennootschap">Commanditaire Vennootschap</option>
+                                                    <option value="Vereniging van Eigenaars">Vereniging van Eigenaars</option>
+                                                    <option value="Geen rechtsvorm (overheid etc.)">Geen rechtsvorm (overheid etc.)</option>
+                                                    <option value="Naamloze Vennootschap">Naamloze Vennootschap</option>
+    
+                                                </select>
+                                            </div>
+                                            <div class="form-group required ">
+                                                <label>KvK nummer</label>
+                                                <div>
+                                                    <input class="form-control" formControlName="KvKnummer">
+                                                    <span style="font-size:12px; color: var(--labelclr);">Upload
+                                                        file</span><input type="file" id="myFile" name="filename"
+                                                        style="margin-top:10px; margin-left:5px" #KvKnummerFile
+                                                        (change)="onKvKnummerFileChange(KvKnummerFile.files)">
+                                                </div>
+                                            </div>
+                                            <div class="form-group required" *ngIf="currentProduct.niwo">
+                                                <label>NIWO vergunning</label>
+                                                <div>
+                                                    <select class="form-control" formControlName="NIWOvergunning">
+                                                        <option value="">Select</option>
+                                                        <option value="Ja">Ja</option>
+                                                        <option value="Nee">Nee</option>
+                                                    </select>
+                                                    <span style="font-size:12px; color: var(--labelclr);">Upload
+                                                        file</span><input type="file" id="myFile" name="filename"
+                                                        style="margin-top:10px; margin-left:5px" #NIWOvergunningFile
+                                                        (change)="onNIWOvergunningFileChange(NIWOvergunningFile.files)">
+                                                </div>
+                                            </div>
+                                            <div class="form-group required ">
+                                                <label>BTW nummer</label>
+                                                <input class="form-control" formControlName="BTWnummer">
+    
+                                            </div>
+                                            <div class="form-group required ">
+                                                <label>Bankrekening</label>
+                                                <input class="form-control" formControlName="Bankrekening">
+                                            </div>
+                                            <div class="form-group required " *ngIf="currentProduct.loondienst">
+                                                <label>Heeft u personeel in loondienst?</label>
+                                                <select class="form-control" formControlName="loondienst">
+                                                    <option value="">Select</option>
+                                                    <option value="Ja">Ja</option>
+                                                        <option value="Nee">Nee</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group required " *ngIf="currentProduct.paychecked">
+                                                <label>Paychecked certificering</label>
+                                                <select class="form-control" formControlName="paychecked">
+                                                    <option value="">Select</option>
+                                                    <option value="Ja">Ja</option>
+                                                        <option value="Nee">Nee</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- row end  here -->
-                                <div class="row mt-3">
-                                    <div class="col-lg-12">
-                                        <h3>Beschikbaarheid</h3>
+                                    <!-- row end  here -->
+                                    <div class="row mt-3">
+                                        <div class="col-lg-12">
+                                            <h3>Beschikbaarheid</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- row end  here -->
-                                <div class="row mt-3">
-                                    <div class="col-lg-12">
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Maandag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
+                                    <!-- row end  here -->
+                                    <div class="row mt-3">
+                                        <div class="col-lg-12">
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Maandag" type="checkbox" formControlName="IsMaandag"></div>
+                                                <div class="ckdays">Maandag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="MaandagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="MaandagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Dinsdag" type="checkbox" formControlName="IsDinsdag"></div>
+                                                <div class="ckdays">Dinsdag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="DinsdagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="DinsdagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Woensdag" type="checkbox" formControlName="IsWoensdag"></div>
+                                                <div class="ckdays">Woensdag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="WoensdagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="WoensdagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Donderdag" type="checkbox" formControlName="IsDonderdag"></div>
+                                                <div class="ckdays">Donderdag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="DonderdagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="DonderdagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Vrijdag" type="checkbox" formControlName="IsVrijdag"></div>
+                                                <div class="ckdays">Vrijdag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="VrijdagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="VrijdagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Zaterdag" type="checkbox" formControlName="IsZaterdag"></div>
+                                                <div class="ckdays">Zaterdag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="ZaterdagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="ZaterdagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
+                                            <div class="jl-beschid-g">
+                                                <div class="ckbx"><input name="Zondag" type="checkbox" formControlName="IsZondag"></div>
+                                                <div class="ckdays">Zondag</div>
+                                                <div class="ckdaysdate"> <input class="form-control day-time" type="time" formControlName="ZondagStartTime"><input class="form-control day-time ml-2" type="time" formControlName="ZondagEndTime"></div>
+                                            </div>
+                                            <!-- g end here -->
                                         </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Dinsdag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Woensdag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Donderdag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Vrijdag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Zaterdag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
-                                        <div class="jl-beschid-g">
-                                            <div class="ckbx"><input name="" type="checkbox" value=""></div>
-                                            <div class="ckdays">Zondag</div>
-                                            <div class="ckdaysdate"> <input class="form-control"></div>
-                                        </div>
-                                        <!-- g end here -->
                                     </div>
-                                </div>
-                                <!-- row end  here -->
-                                <div class="row">
-                                    <div class="col-lg-12 text-right">
-                                        <button type="submit" name="submit" class="btn submit-btn">Verstuur <i
-                                                class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                    <!-- row end  here -->
+                                    <div class="row">
+                                        <div class="col-lg-12 text-right">
+                                            <button type="submit" name="submit" class="btn submit-btn" [disabled]="disabledForm()">Verstuur <i
+                                                    class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                        </div>
                                     </div>
+                                    <!-- row end  here -->
                                 </div>
-                                <!-- row end  here -->
-                            </div>
+                            </form>
+                            
                             <!-- form end here -->
                         </div>
                     </div>
@@ -219,3 +230,10 @@
     </div>
     <!-- container end here -->
 </div>
+
+<div id="load_cover" *ngIf="showLoader">
+    <div class="loaderInner">
+      <div class="loader"></div>
+      <div class="loader-logo"></div>
+    </div>
+  </div>

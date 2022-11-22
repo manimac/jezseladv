@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   productLists: any = [];
   about: any = {};
+  showLoader: boolean = false;
   constructor(private http: HttpRequestService) { }
 
   ngOnInit(): void {
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getProducts() {
+    this.showLoader = true;
     this.http.get('aboutus').subscribe(
       (response: any) => {
         this.about = response;
@@ -27,13 +29,14 @@ export class HomeComponent implements OnInit {
     )
     this.http.get('products').subscribe(
       (response: any) => {
+        this.showLoader = false;
         this.productLists = response;
         console.log(this.productLists)
         setTimeout(()=>{
           const liElement = document.getElementsByTagName("li");
           if(liElement){
             for(let i = 0;i< liElement.length;i++){
-              liElement[i].innerHTML = "<i class='fa fa-angle-double-right' aria-hidden='true'></i>" + liElement[i].innerHTML
+              liElement[i].innerHTML = "<i class='fa fa-angle-double-right' aria-hidden='true'></i><span>" + liElement[i].innerHTML + "</span>"
             }
           }
         })
