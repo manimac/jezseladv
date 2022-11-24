@@ -163,6 +163,12 @@ max-width: 1140px;
 }
 
 }
+@media (max-width: 695px){
+.jl-lt-fm-img-m-g {
+    grid-template-columns: 1fr;
+
+}
+}
 
 
 @media (max-width: 530px){
